@@ -38,4 +38,29 @@ window.onload = function () {
   painel();
 
   //!  Function que implementa o painel para desenhar
+
+  let corSelecionada = document.querySelector('#color-palette');
+
+  corSelecionada.addEventListener('click', function (elemento) {
+    let classe = document.querySelector('.selected');
+    let clas = elemento.target.classList;
+    if (clas.length < 2) {
+      classe.classList.remove('selected');
+      clas.add('selected');
+    }
+  });
+
+  //! Function que adiciona a classe selected na cor clicada e remove da cor anterior
+
+  let possicaoSelecionada = document.querySelector('#pixel-board');
+
+  possicaoSelecionada.addEventListener('click', function (elemento) {
+    let classe = document.querySelector('.selected').style.backgroundColor;
+    let possicao = elemento.target;
+    if (possicao.classList == 'pixel') {
+      possicao.style.backgroundColor = classe;
+    }
+  });
+
+  //! Function que pinta o painel com a cor selecionada
 };
