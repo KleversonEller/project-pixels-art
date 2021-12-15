@@ -1,0 +1,47 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+header {
+  background-color: blueviolet;
+  text-align: center;
+}
+
+#color-palette {
+  background-color: cadetblue;
+  text-align: center;
+}
+
+.color {
+  display: inline-block;
+  border: solid 1px;
+  height: 40px;
+  width: 40px;
+}
+
+.color,
+#red {
+  background-color: red;
+}
+
+.color,
+#green {
+  background-color: green;
+}
+
+.color,
+#blue {
+  background-color: blue;
+}
+
+.color,
+#yellow {
+  background-color: yellow;
+}
+
+.color,
+#black {
+  background-color: black;
+}
