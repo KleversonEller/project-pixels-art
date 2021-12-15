@@ -5,12 +5,10 @@
 }
 
 header {
-  background-color: blueviolet;
   text-align: center;
 }
 
 #color-palette {
-  background-color: cadetblue;
   text-align: center;
 }
 
@@ -20,4 +18,15 @@ header {
   height: 40px;
   width: 40px;
   margin: 5px;
+}
+
+#pixel-board {
+  text-align: center;
+}
+
+.pixel {
+  display: inline-block;
+  border: solid 1px;
+  height: 40px;
+  width: 40px;
 }
