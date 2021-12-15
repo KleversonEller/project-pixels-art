@@ -7,6 +7,9 @@ window.onload = function () {
       let criaCor = document.createElement('li');
       criaCor.classList.add('color');
       criaCor.style.backgroundColor = cores[posicao];
+      if (cores[posicao] === 'black') {
+        criaCor.classList.add('selected');
+      }
 
       paleta.appendChild(criaCor);
     }
