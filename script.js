@@ -1,4 +1,6 @@
 window.onload = function () {
+  //? Requisito 2 - 3 - 6
+
   function paletaDeCores() {
     let paleta = document.querySelector('#color-palette');
     let cores = ['black', 'red', 'green', 'yellow'];
@@ -18,6 +20,8 @@ window.onload = function () {
   paletaDeCores();
 
   //! Function que implementa a paleta de cores e suas cores
+
+  //? Requisito 4 - 5
 
   function painel() {
     let painel = document.querySelector('#pixel-board');
@@ -39,18 +43,22 @@ window.onload = function () {
 
   //!  Function que implementa o painel para desenhar
 
+  //? Requisito 7
+
   let corSelecionada = document.querySelector('#color-palette');
 
   corSelecionada.addEventListener('click', function (elemento) {
     let classe = document.querySelector('.selected');
     let clas = elemento.target.classList;
-    if (clas.length < 2) {
+    if (clas.length < 2 && clas == 'color') {
       classe.classList.remove('selected');
       clas.add('selected');
     }
   });
 
   //! Function que adiciona a classe selected na cor clicada e remove da cor anterior
+
+  //? Requisito 8
 
   let possicaoSelecionada = document.querySelector('#pixel-board');
 
