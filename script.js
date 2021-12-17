@@ -71,4 +71,16 @@ window.onload = function () {
   });
 
   //! Function que pinta o painel com a cor selecionada
+
+  //? Requisito 9
+
+  let botaoLimpar = document.querySelector('#clear-board');
+
+  botaoLimpar.addEventListener('click', function () {
+    let pixels = document.querySelectorAll('.pixel');
+
+    for (let posicao of pixels) posicao.style.backgroundColor = 'white';
+  });
+
+  //! Function que ao clicar no botao 'limpar' pinta todo o quadro de branco
 };
