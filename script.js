@@ -23,11 +23,15 @@ window.onload = function () {
 
   //? Requisito 4 - 5
 
-  function painel() {
+  function painel(quantidade) {
+    let criaPainel = document.createElement('section');
+    criaPainel.id = 'pixel-board';
+    let main = document.querySelector('main');
+    main.appendChild(criaPainel);
     let painel = document.querySelector('#pixel-board');
-    for (let index = 1; index <= 5; index += 1) {
+    for (let index = 1; index <= quantidade; index += 1) {
       let criaColuna = document.createElement('ol');
-      for (let indi = 1; indi <= 5; indi += 1) {
+      for (let indi = 1; indi <= quantidade; indi += 1) {
         let criaLinha = document.createElement('li');
         criaLinha.classList.add('pixel');
         criaLinha.style.backgroundColor = 'white';
@@ -39,7 +43,7 @@ window.onload = function () {
     }
   }
 
-  painel();
+  painel(5);
 
   //!  Function que implementa o painel para desenhar
 
@@ -83,4 +87,21 @@ window.onload = function () {
   });
 
   //! Function que ao clicar no botao 'limpar' pinta todo o quadro de branco
+
+  //? Requisito 10
+
+  let botaoVqv = document.querySelector('#generate-board');
+
+  botaoVqv.addEventListener('click', function () {
+    let quantidadePixel = document.querySelector('#board-size').value;
+
+    if (quantidadePixel < 5 || quantidadePixel > 50) {
+      alert('Board inválido!');
+    } else {
+      let painelRemove = document.querySelector('#pixel-board');
+      let main = document.querySelector('main');
+      main.removeChild(painelRemove);
+      painel(quantidadePixel);
+    }
+  });
 };
