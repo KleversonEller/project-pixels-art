@@ -2,8 +2,37 @@ window.onload = function () {
   //? Requisito 2 - 3 - 6
 
   function paletaDeCores() {
+    function geraNumero(min, max) {
+      min = Math.ceil(min);
+      max = Math.floor(max);
+      return Math.floor(Math.random() * (max - min)) + min;
+    }
+    let primeiroCor =
+      'rgb(' +
+      geraNumero(1, 255) +
+      ',' +
+      geraNumero(1, 255) +
+      ',' +
+      geraNumero(1, 255) +
+      ')';
+    let segundaCor =
+      'rgb(' +
+      geraNumero(1, 255) +
+      ',' +
+      geraNumero(1, 255) +
+      ',' +
+      geraNumero(1, 255) +
+      ')';
+    let terceiraCor =
+      'rgb(' +
+      geraNumero(1, 255) +
+      ',' +
+      geraNumero(1, 255) +
+      ',' +
+      geraNumero(1, 255) +
+      ')';
     let paleta = document.querySelector('#color-palette');
-    let cores = ['black', 'red', 'green', 'yellow'];
+    let cores = ['black', primeiroCor, segundaCor, terceiraCor];
 
     for (let posicao in cores) {
       let criaCor = document.createElement('li');
