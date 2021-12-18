@@ -1,7 +1,9 @@
 window.onload = function () {
-  //? Requisito 2 - 3 - 6
+  //? Requisito 2 - 3 - 6 - 12
 
   function paletaDeCores() {
+    //* Referencia para a function 'geraNumero' (https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Math/random)
+
     function geraNumero(min, max) {
       min = Math.ceil(min);
       max = Math.floor(max);
