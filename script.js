@@ -23,14 +23,13 @@ window.onload = function () {
 
   //? Requisito 4 - 5
 
+  let valorEntrada = 5;
+
   function painel(quantidade) {
-    let criaPainel = document.createElement('section');
-    criaPainel.id = 'pixel-board';
-    let main = document.querySelector('main');
-    main.appendChild(criaPainel);
     let painel = document.querySelector('#pixel-board');
     for (let index = 1; index <= quantidade; index += 1) {
       let criaColuna = document.createElement('ol');
+      criaColuna.classList.add('tamanho-caixa');
       for (let indi = 1; indi <= quantidade; indi += 1) {
         let criaLinha = document.createElement('li');
         criaLinha.classList.add('pixel');
@@ -43,7 +42,7 @@ window.onload = function () {
     }
   }
 
-  painel(5);
+  painel(valorEntrada);
 
   //!  Function que implementa o painel para desenhar
 
@@ -93,15 +92,61 @@ window.onload = function () {
   let botaoVqv = document.querySelector('#generate-board');
 
   botaoVqv.addEventListener('click', function () {
+    let pixelExistente = document.querySelectorAll('#pixel-board ol');
     let quantidadePixel = document.querySelector('#board-size').value;
-
-    if (quantidadePixel < 5 || quantidadePixel > 50) {
+    for (let posicao of pixelExistente) {
+      let pixelPaine = document.querySelector('#pixel-board');
+      pixelPaine.removeChild(posicao);
+    }
+    if (quantidadePixel < 5) {
       alert('Board inválido!');
+      let painel = document.querySelector('#pixel-board');
+      for (let index = 1; index <= 5; index += 1) {
+        let criaColuna = document.createElement('ol');
+        criaColuna.classList.add('tamanho-caixa');
+        for (let indi = 1; indi <= 5; indi += 1) {
+          let criaLinha = document.createElement('li');
+          criaLinha.classList.add('pixel');
+          criaLinha.style.backgroundColor = 'white';
+
+          criaColuna.appendChild(criaLinha);
+        }
+
+        painel.appendChild(criaColuna);
+      }
+    } else if (quantidadePixel > 50) {
+      alert('Board inválido!');
+      let painel = document.querySelector('#pixel-board');
+      for (let index = 1; index <= 50; index += 1) {
+        let criaColuna = document.createElement('ol');
+        criaColuna.classList.add('tamanho-caixa');
+        for (let indi = 1; indi <= 50; indi += 1) {
+          let criaLinha = document.createElement('li');
+          criaLinha.classList.add('pixel');
+          criaLinha.style.backgroundColor = 'white';
+
+          criaColuna.appendChild(criaLinha);
+        }
+
+        painel.appendChild(criaColuna);
+      }
     } else {
-      let painelRemove = document.querySelector('#pixel-board');
-      let main = document.querySelector('main');
-      main.removeChild(painelRemove);
-      painel(quantidadePixel);
+      let painel = document.querySelector('#pixel-board');
+      for (let index = 1; index <= quantidadePixel; index += 1) {
+        let criaColuna = document.createElement('ol');
+        criaColuna.classList.add('tamanho-caixa');
+        for (let indi = 1; indi <= quantidadePixel; indi += 1) {
+          let criaLinha = document.createElement('li');
+          criaLinha.classList.add('pixel');
+          criaLinha.style.backgroundColor = 'white';
+
+          criaColuna.appendChild(criaLinha);
+        }
+
+        painel.appendChild(criaColuna);
+      }
     }
   });
+
+  //! Function que cria dinamicamente um painel de pixel a partir de um valor 'X' passado pelo usuário
 };
